@@ -21,9 +21,10 @@ function preload() {
 }
 
 function setup() {
-  let canvas = createCanvas(1024, 500);
+  let canvas = createCanvas(1000, 500);
+  canvas.position(350, 150);
   button = createButton('Restart Game');
-  button.position(width / 2 + 100, height + 30);
+  button.position(width / 2 + 300, height + 200);
   button.hide();
   button.mousePressed(reloadPage);
 }
@@ -44,4 +45,3 @@ document.body.style.justifyContent = 'center';
 function reloadPage() {
   document.location.reload();
 }
-

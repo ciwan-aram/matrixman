@@ -24,7 +24,7 @@ class WhiteRabbit {
       this.y < player.y + player.imgHeight &&
       this.y + this.img.height / 20 > player.y
     ) {
-      // collision detected!
+
       return true;
     }
 

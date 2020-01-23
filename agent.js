@@ -9,7 +9,7 @@ class Agent {
   moveAgent() {
     if (this.y > height) {
       this.y = 0;
-      this.x = Math.floor(Math.random() * 500);
+      this.x = Math.floor(Math.random() * 900);
     }
     this.y += 3;
   }
