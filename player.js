@@ -2,14 +2,14 @@ class Player {
   constructor() {
     this.img = loadImage('assets/player/neo.GIF');
     this.imgWidth = 80;
-    this.imgHeight = 80;
+    this.imgHeight = 90;
     this.moveDown;
     this.moveUp;
     this.moveRight;
     this.moveLeft;
     this.x = Math.floor(Math.random() * 400);
     this.y = Math.floor(Math.random() * 500);
-    this.strength = 50;
+    this.strength = 200;
   }
 
   setup() {

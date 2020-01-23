@@ -1,6 +1,6 @@
 class Phone {
   constructor() {
-    this.img = loadImage('/assets/obstacles/phone.gif');
+    this.img = loadImage('assets/obstacles/phone.gif');
     this.x = Math.floor(Math.random() * 500);
     this.y = 0;
     // this.counter = 0;
@@ -32,11 +32,9 @@ class Phone {
       this.y < player.y + player.imgHeight &&
       this.y + this.img.height / 5 > player.y
     ) {
-      // collision detected!
       return true;
     }
 
     return false;
-
   }
 }

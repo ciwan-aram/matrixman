@@ -1,6 +1,6 @@
 class Agent {
   constructor() {
-    this.img = loadImage('/assets/obstacles/agent-smith.png');
+    this.img = loadImage('assets/obstacles/agent-smith.png');
     this.x = Math.floor(Math.random() * 500);
     this.y = 0;
   }

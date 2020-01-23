@@ -27,6 +27,10 @@ function setup() {
   button.position(width / 2 + 300, height + 200);
   button.hide();
   button.mousePressed(reloadPage);
+  startButton = createButton('Start');
+  startButton.position(width / 2, height + 200);
+  startButton.mousePressed(startGame);
+  noLoop();
 }
 
 function draw() {
@@ -44,4 +48,8 @@ document.body.style.justifyContent = 'center';
 
 function reloadPage() {
   document.location.reload();
+}
+function startGame() {
+  loop();
+  startButton.hide();
 }

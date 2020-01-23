@@ -1,6 +1,6 @@
 class WhiteRabbit {
   constructor() {
-    this.img = loadImage('/assets/obstacles/animated-rabbit-image-0034.gif');
+    this.img = loadImage('assets/obstacles/animated-rabbit-image-0034.gif');
     this.x = Math.floor(Math.random() * 500);
     this.y = 0;
   }
@@ -24,11 +24,9 @@ class WhiteRabbit {
       this.y < player.y + player.imgHeight &&
       this.y + this.img.height / 20 > player.y
     ) {
-
       return true;
     }
 
     return false;
-
   }
 }

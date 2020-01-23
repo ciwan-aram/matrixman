@@ -3,20 +3,22 @@ class Game {
     console.log('GAME CONSTRUCTOR');
     this.phone;
     this.agents = [];
+    this.morpheus;
     this.whiteRabbit;
     this.code;
     this.phone;
-    this.score = 0;
   }
   init() {
     this.background = new Background();
     this.player = new Player();
     this.agents.push(new Agent());
+    this.morpheus = new Morpheus();
     this.whiteRabbit = new WhiteRabbit();
     this.code = new Code();
     this.phone = new Phone();
     this.whipeSound = loadSound('assets/Sounds/swipe_003.mp3');
     this.dangerSound = loadSound('assets/Sounds/body-impact-sound.mp3');
+    this.gameOverSound = loadSound('assets/Sounds/game-over-said.mp3');
     this.blawan993 = loadSound('assets/Sounds/Blawan - 993 [TESC004].mp3');
   }
   draw() {
@@ -31,6 +33,7 @@ class Game {
     this.whiteRabbit.drawWhiteRabbit();
     this.code.drawCode();
     this.phone.drawPhone();
+    this.morpheus.drawMorpheus();
 
     this.agents.forEach(
       function(agent) {
@@ -44,6 +47,7 @@ class Game {
             textFont('pixel', 30); // size
             fill(255, 255, 255); //color ${}
             text(`Over Game`, width / 2 - 100, 300);
+            game.gameOverSound.play();
             noLoop();
             button.show();
           }
@@ -51,11 +55,18 @@ class Game {
       }.bind(this)
     );
 
+    if (this.morpheus.collides(this.player)) {
+      console.log('collided with Morpheus');
+      this.player.strength += 100;
+      this.morpheus.y = -2000;
+      this.morpheus.x = Math.floor(Math.random() * 900);
+    }
+
     if (this.whiteRabbit.collides(this.player)) {
       console.log('collided with rabbit');
       this.player.strength += 50;
       this.whiteRabbit.y = -300;
-      this.whiteRabbit.x = Math.floor(Math.random() * 400);
+      this.whiteRabbit.x = Math.floor(Math.random() * 900);
 
       game.whipeSound.play();
     }
@@ -64,7 +75,7 @@ class Game {
       console.log('collided with code');
       this.player.strength += 20;
       this.code.y = -1000;
-      this.code.x = Math.floor(Math.random() * 400);
+      this.code.x = Math.floor(Math.random() * 900);
 
       game.whipeSound.play();
     }
@@ -73,7 +84,7 @@ class Game {
       console.log('collided with phone');
       this.player.strength += 300;
       this.phone.y = -500;
-      this.phone.x = Math.floor(Math.random() * 400);
+      this.phone.x = Math.floor(Math.random() * 900);
       this.agents = [];
 
       game.whipeSound.play();
