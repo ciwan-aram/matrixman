@@ -30,6 +30,9 @@ function setup() {
   startButton = createButton('Start');
   startButton.position(width / 2, height + 200);
   startButton.mousePressed(startGame);
+  // pauseButton = createButton('Pause');
+  // pauseButton.position(width / 2 - 200, height + 200);
+  // pauseButton.mousePressed(togglePlaying);
   noLoop();
 }
 
@@ -53,3 +56,8 @@ function startGame() {
   loop();
   startButton.hide();
 }
+
+// function pauseGame() {
+//   loop();
+//   pauseButton.hide();
+// }

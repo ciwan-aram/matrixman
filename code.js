@@ -1,6 +1,6 @@
 class Code {
   constructor() {
-    this.img = loadImage('/assets/obstacles/broken-code.jpg');
+    this.img = loadImage('assets/obstacles/broken-code.jpg');
     this.x = Math.floor(Math.random() * 500);
     this.y = 0;
   }

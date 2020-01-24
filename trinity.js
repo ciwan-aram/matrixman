@@ -1,26 +1,26 @@
-class Phone {
+class Trinity {
   constructor() {
-    this.img = loadImage('assets/obstacles/phone.gif');
+    this.img = loadImage('assets/obstacles/matrix-trinity-512.png');
     this.x = Math.floor(Math.random() * 900);
-    this.y = -1000;
+    this.y = -500;
   }
 
-  // ----------------------move------------------------
-  movePhone() {
+  // ----------------------moves------------------------
+  moveTrinity() {
     if (this.y > height) {
       this.y = -2000;
-      this.x = Math.floor(Math.random() * 900);
+      this.x = Math.floor(Math.random() * 500);
     }
-    this.y += 1.5;
+    this.y += 2;
   }
 
-  //--------------------------draw--------------------------
+  //--------------------------draws--------------------------
 
-  drawPhone() {
-    // console.log(this.x, this.y);
+  drawTrinity() {
     image(this.img, this.x, this.y, this.img.width / 5, this.img.height / 5);
-    this.movePhone();
+    this.moveTrinity();
   }
+
   //----------------------------------Collisions------------------------------
 
   collides(player) {
