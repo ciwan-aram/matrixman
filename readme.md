@@ -1,0 +1,10 @@
+- Welcome to MatriX.
+- click start to start the game
+- fly the player "Neo" to fix codes and fight agent Smith. Every collision strength decrease -200.
+- agnet numbers increase with time.
+- collide wih phone to escape (reset agent number) and get 500+ strength.
+- You can fly to left edge and appear from right, and top to buttom and vice versa.
+- collide with codes and white rabbits to get strength. + 50 and + 80.
+- collide with Trinity to start party. +1000 points. This happens only once.
+- you don't need to collide with Morpheus. When he is around he gives you strength +5 every framecount he is around.
+- strength < 0, game over. Restart Game button to refresh the page.

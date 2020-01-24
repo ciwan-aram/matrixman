@@ -7,8 +7,8 @@ class Player {
     this.moveUp;
     this.moveRight;
     this.moveLeft;
-    this.x = Math.floor(Math.random() * 400);
-    this.y = Math.floor(Math.random() * 500);
+    this.x = Math.floor(Math.random() * 800);
+    this.y = Math.floor(Math.random() * 400);
     this.strength = 200;
   }
 

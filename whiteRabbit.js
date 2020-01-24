@@ -2,7 +2,7 @@ class WhiteRabbit {
   constructor() {
     this.img = loadImage('assets/obstacles/animated-rabbit-image-0034.gif');
     this.x = Math.floor(Math.random() * 500);
-    this.y = 0;
+    this.y = -250;
   }
   moveWhiteRabbit() {
     if (this.y > height) {

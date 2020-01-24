@@ -17,7 +17,6 @@ function preload() {
   console.log('PRELOAD');
 
   game.init();
-  // song = loadSound('/assets/);
 }
 
 function setup() {
@@ -25,14 +24,18 @@ function setup() {
   canvas.position(350, 150);
   button = createButton('Restart Game');
   button.position(width / 2 + 300, height + 200);
+  button.style('font-size', '30px');
+  button.style('font-family', 'courier');
+  button.style('backgroundColor', '2F4F4F');
   button.hide();
   button.mousePressed(reloadPage);
   startButton = createButton('Start');
   startButton.position(width / 2, height + 200);
+  startButton.style('font-family', 'courier');
+  startButton.style('font-size', '40px');
   startButton.mousePressed(startGame);
-  // pauseButton = createButton('Pause');
-  // pauseButton.position(width / 2 - 200, height + 200);
-  // pauseButton.mousePressed(togglePlaying);
+  startButton.style('backgroundColor', '2F4F4F');
+
   noLoop();
 }
 
@@ -41,8 +44,8 @@ function draw() {
   game.draw();
   game.player.draw();
 
-  textFont('sans-serif', 30); // size
-  fill(255, 255, 255); //color ${}
+  textFont('curier', 35);
+  fill('2F4F4F');
   text(`Strength: ${game.player.strength}`, width - width / 4.1, 30);
 }
 
@@ -56,8 +59,3 @@ function startGame() {
   loop();
   startButton.hide();
 }
-
-// function pauseGame() {
-//   loop();
-//   pauseButton.hide();
-// }

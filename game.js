@@ -8,6 +8,7 @@ class Game {
     this.whiteRabbit;
     this.code;
     this.phone;
+    this.trinityIsThere = false;
   }
   init() {
     this.background = new Background();
@@ -47,15 +48,16 @@ class Game {
             this.player.strength -= 200;
             agent.y = -100;
             game.bodyImpactSound.play();
-          } else if (this.player.strength <= 500) {
-            this.player.strength -= 100;
+          } else if (this.player.strength < 1000) {
+            this.player.strength -= 200;
             agent.y = -300;
             game.bodyImpactSound.play();
-          } else if (this.player.strength <= 100) {
+          }
+          if (this.player.strength <= 100) {
             this.player.strength -= 100;
-            textFont('ariel', 30); // size
-            fill(255, 255, 255); //color ${}
-            text(`Over Game`, width / 2 - 100, 300);
+            textFont('courier', 50);
+            fill('2F4F4F');
+            text(`Game Over`, width / 2 - 100, 300);
             game.gameOverSound.play();
             noLoop();
             button.show();
@@ -67,16 +69,21 @@ class Game {
     if (this.morpheus.y > 0 && this.morpheus.y < height) {
       this.player.strength += 5;
     }
-    // if (this.trinity.collides(this.player)) {
-    //   console.log('collided with Trinity');
-    //   this.player.strength += 500;
-    //   game.party.play();
-    // }
+
+    if (this.trinity.y > 0 && this.trinity.y < height) {
+      this.player.strength += 3;
+    }
+    if (this.trinity.collides(this.player) && !this.trinityIsThere) {
+      console.log('collided with Trinity');
+      this.player.strength += 1000;
+      game.party.play();
+      this.trinityIsThere = true;
+    }
 
     if (this.whiteRabbit.collides(this.player)) {
       console.log('collided with rabbit');
-      this.player.strength += 50;
-      this.whiteRabbit.y = -300;
+      this.player.strength += 80;
+      this.whiteRabbit.y = -200;
       this.whiteRabbit.x = Math.floor(Math.random() * 900);
 
       game.whipeSound.play();
@@ -84,7 +91,7 @@ class Game {
 
     if (this.code.collides(this.player)) {
       console.log('collided with code');
-      this.player.strength += 20;
+      this.player.strength += 50;
       this.code.y = 0;
       this.code.x = Math.floor(Math.random() * 900);
 

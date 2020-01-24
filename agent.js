@@ -1,17 +1,16 @@
 class Agent {
   constructor() {
     this.img = loadImage('assets/obstacles/agent-smith.png');
-    this.x = Math.floor(Math.random() * 500);
-    this.y = 0;
+    this.x = Math.floor(Math.random() * 900);
+    this.y = -100;
   }
 
-  // ----------------------moves------------------------
   moveAgent() {
     if (this.y > height) {
       this.y = 0;
       this.x = Math.floor(Math.random() * 900);
     }
-    this.y += 3;
+    this.y += 2.5;
   }
 
   drawAgent() {
